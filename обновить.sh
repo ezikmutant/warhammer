@@ -1,9 +1,10 @@
 #!/bin/sh
-# Пересобрать доску и обновить страницу для публикации.
-cd "$(dirname "$0")/.." || exit 1
-python3 "Разбор/.сборка-доски.py" || exit 1
-cp "Разбор/Доска заговора.html" "Публикация/index.html"
-rm -rf "Публикация/img"
-[ -d "Разбор/img" ] && cp -R "Разбор/img" "Публикация/img"
-cd Публикация || exit 1
+# Пересобрать доску и выложить её на GitHub Pages.
+V="/Users/uliaudacina/Documents/Вархаммер"
+S="/Users/uliaudacina/Documents/Вархаммер-сайт"
+python3 "$V/Разбор/.сборка-доски.py" || exit 1
+cp "$V/Разбор/Доска заговора.html" "$S/index.html"
+rm -rf "$S/img"
+[ -d "$V/Разбор/img" ] && cp -R "$V/Разбор/img" "$S/img"
+cd "$S" || exit 1
 git add -A && git commit -m "Доска заговора: обновление" && git push
