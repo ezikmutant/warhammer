@@ -3,5 +3,7 @@
 cd "$(dirname "$0")/.." || exit 1
 python3 "Разбор/.сборка-доски.py" || exit 1
 cp "Разбор/Доска заговора.html" "Публикация/index.html"
+rm -rf "Публикация/img"
+[ -d "Разбор/img" ] && cp -R "Разбор/img" "Публикация/img"
 cd Публикация || exit 1
 git add -A && git commit -m "Доска заговора: обновление" && git push
