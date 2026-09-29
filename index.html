@@ -227,6 +227,7 @@ h2.hl.off,h3.hl.off,h4.hl.off{background:transparent}
     <button data-n="Конспект сессии 6 — Канун Кадильного дня" title="Сессия 6 (20.08) — патрон, амасек, «Оружейник»">6</button>
     <button data-n="Конспект сессии 7 — Логово Оружейника" title="Сессия 7 (27.08) — ФИ-99, бой у Резчиков, рассказ Фурункул, логово">7</button>
     <button data-n="Конспект сессии 8 — Великое исцеление" title="Сессия 8 (17.09) — Нулевая Узница, благодать в соборе, Оружейник опознан, приказ патрона">8</button>
+    <button data-n="Конспект сессии 9 — Дно" title="Сессия 9 (28.09) — аптека и газ, удар по собору, Дно: Первенец и демон Тзинча; конец первой кампании">9</button>
   </span>
   <span class="sep"></span><span id="qwrap"><input id="q" placeholder="поиск по доске…">
   <button id="qx" type="button" title="очистить поиск" aria-label="очистить поиск">✕</button></span>
@@ -464,7 +465,7 @@ function clearSearch(){q.value=''; runSearch(); q.focus()}
 q.addEventListener('input',runSearch);
 qx.addEventListener('click',clearSearch);
 q.addEventListener('keydown',e=>{if(e.key==='Escape'&&q.value!==''){e.stopPropagation();clearSearch()}});
-document.getElementById('stamp').textContent='сборка 29.09 13:17 · ';
+document.getElementById('stamp').textContent='сборка 29.09 13:19 · ';
 fit();
 const h=decodeURIComponent((location.hash||'').slice(1));
 if(h&&NOTES[h])openNote(h);
